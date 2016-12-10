@@ -4,6 +4,7 @@ module toplevel(
 	input  [1:0] wave_word, // 波形控制字，00->正弦 01->三角 10->方波 11->PWM
 	input [19:0] freq_word, // 频率控制字，fout = 100e6 / (2^28) * (2^freq_word)
 	input  [6:0] pwm_word,  // PWM 占空比控制字
+	output da_clk,
 	output [7:0] da_db
 );
 
@@ -34,5 +35,7 @@ rom_sin  rom_sin_instance (
 	.clock(clk_100m),
 	.q(da_db)
 );
+
+assign da_clk = clk_100m;
 
 endmodule
