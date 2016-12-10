@@ -57,7 +57,6 @@ stp2_auto_stripped.stp
 *.cdf
 *.dpf
 *.stp
-*.mif
 
 # Created by https://www.gitignore.io/api/eclipse
 
