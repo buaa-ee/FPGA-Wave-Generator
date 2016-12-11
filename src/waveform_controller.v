@@ -10,9 +10,9 @@ module waveform_controller(
 
 always @(posedge clk) begin
 	case({enable,wave_word})
-		3'b100 : waveform = sinewave;                       // 正弦
-		3'b101 : waveform = {8{address[8]}} ^ address[7:0]; // 三角
-		3'b110 : waveform = {address[8],7'b0 };             // 方波
+		3'b100 : waveform = sinewave;                        // 正弦
+		3'b101 : waveform = {8{address[8]}} ^ address[7:0];  // 三角
+		3'b110 : waveform = {address[8],7'b0 };              // 方波
 		3'b111 : waveform = {address<{pwm_word,2'b00},7'b0}; // PWM
 		default : waveform = 8'b0;          // enable = 0 时输出为 0
 	endcase

@@ -225,5 +225,5 @@ set_global_assignment -name VERILOG_FILE src/toplevel.v
 set_global_assignment -name QIP_FILE ip/lpm_add_sub/phase_adder.qip
 set_global_assignment -name QIP_FILE ip/altpll/pll.qip
 set_global_assignment -name QIP_FILE ip/rom_sin/rom_sin.qip
-set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
 set_global_assignment -name SLD_FILE db/stp1_auto_stripped.stp
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
