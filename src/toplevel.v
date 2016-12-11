@@ -30,10 +30,24 @@ phase_adder  phase_adder_instance (
 
 /*******************************/
 
+wire [7:0] sinewave;
+
 rom_sin  rom_sin_instance (
 	.address(phase[27:19]),
 	.clock(clk_100m),
-	.q(da_db)
+	.q(sinewave)
+);
+
+/*******************************/
+
+waveform_controller  waveform_controller_instance (
+	.enable(enable),
+	.clk(clk_100m),
+	.wave_word(wave_word),
+	.pwm_word(pwm_word),
+	.sinewave(sinewave),
+	.address(phase[27:19]),
+	.waveform(da_db)
 );
 
 assign da_clk = clk_100m;

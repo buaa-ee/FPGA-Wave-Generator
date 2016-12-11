@@ -100,10 +100,6 @@ set_global_assignment -name EDA_TEST_BENCH_NAME toplevel -section_id eda_simulat
 set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id toplevel
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME toplevel_vlg_tst -section_id toplevel
 set_global_assignment -name EDA_TEST_BENCH_FILE simulation/modelsim/toplevel.vt -section_id toplevel
-set_global_assignment -name VERILOG_FILE src/toplevel.v
-set_global_assignment -name QIP_FILE ip/lpm_add_sub/phase_adder.qip
-set_global_assignment -name QIP_FILE ip/altpll/pll.qip
-set_global_assignment -name QIP_FILE ip/rom_sin/rom_sin.qip
 set_global_assignment -name ENABLE_SIGNALTAP ON
 set_global_assignment -name USE_SIGNALTAP_FILE stp1.stp
 set_location_assignment PIN_E1 -to clk_50m
@@ -224,5 +220,10 @@ set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[1] -t
 set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[4] -to auto_signaltap_0|gnd -section_id auto_signaltap_0
 set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[6] -to auto_signaltap_0|vcc -section_id auto_signaltap_0
 set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[7] -to auto_signaltap_0|gnd -section_id auto_signaltap_0
+set_global_assignment -name VERILOG_FILE src/waveform_controller.v
+set_global_assignment -name VERILOG_FILE src/toplevel.v
+set_global_assignment -name QIP_FILE ip/lpm_add_sub/phase_adder.qip
+set_global_assignment -name QIP_FILE ip/altpll/pll.qip
+set_global_assignment -name QIP_FILE ip/rom_sin/rom_sin.qip
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
 set_global_assignment -name SLD_FILE db/stp1_auto_stripped.stp
