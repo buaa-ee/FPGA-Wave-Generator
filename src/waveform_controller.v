@@ -14,7 +14,7 @@ always @(posedge clk) begin
 		3'b101 : waveform = {8{address[8]}} ^ address[7:0];        // 三角
 		3'b110 : waveform = {address[8], {7{1'b1}}};               // 方波
 		3'b111 : waveform = {address<{pwm_word,2'b00}, {7{1'b1}}}; // PWM
-		default : waveform = 8'b0;                 // enable = 0 时输出为 0
+		default : waveform = {1'b0,{7{1'b1}}};     // enable = 0 时输出为 0
 	endcase
 end
 
